@@ -91,6 +91,9 @@ This codebase was developed and tested with python 3.7, Pytorch 1.5.1, and CUDA 
 conda env create --file environment.yml
 ```
 
+### Pre-trained Model
+Our pre-trained models are availabe in this [link](https://drive.google.com/drive/folders/1ne2yyGMifciHG3uXj6xjc4q_KtX8z4Ki?usp=sharing)
+
 ### Datasets
 
 For ViViD Raw dataset, download the dataset provided on the [official website](https://sites.google.com/view/dgbicra2019-vivid/).
