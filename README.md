@@ -20,21 +20,26 @@ By resolving the fundamental problem of the thermal image, our depth and pose ne
 As our best knowledge, this work is the first self-supervised learning approach to train monocular depth and relative pose networks with only thermal images.
 
 <p align="center">
-  <img src="media/teaser1.png" width="400" />
-  <img src="media/teaser2.png" width="400" />
+  <img src="media/overview_a.png" width="500" />
+  <img src="media/overview_b.png" width="500" />
 </p>
 
-![](media/qualitative1.png)
-![](media/qualitative2.png)
+<p align="center">
+  <img src="media/qualitative_1.png" width="900" />
+</p>
+<p align="center">
+  <img src="media/qualitative_2.png" width="900" />
+</p>
 
 Please refer to the video for more descriptions and visual results.
+
 [![Video Label](https://img.youtube.com/vi/oNu_YVf8sCc/0.jpg)](https://youtu.be/oNu_YVf8sCc)
 
 ## Main Results
 
 ### Depth Results
 
-#### Indoor Well-lit
+#### Indoor test set (Well-lit)
 
 |   Models   | Abs Rel | Sq Rel | RMSE  | RMSE(log) | Acc.1 | Acc.2 | Acc.3 |
 |------------|---------|--------|-------|-----------|-------|-------|-------|
@@ -42,7 +47,7 @@ Please refer to the video for more descriptions and visual results.
 | Shin(MS)   | 0.156   | 0.111  | 0.527 | 0.197     | 0.783 | 0.975 | 0.997 |
 | Ours       | 0.152   | 0.121  | 0.538 | 0.196     | 0.814 | 0.965 | 0.992 |
 
-#### Indoor Low-/Zero- light
+#### Indoor test set (Low-/Zero- light)
 
 |   Models   | Abs Rel | Sq Rel | RMSE  | RMSE(log) | Acc.1 | Acc.2 | Acc.3 |
 |------------|---------|--------|-------|-----------|-------|-------|-------|
@@ -50,7 +55,7 @@ Please refer to the video for more descriptions and visual results.
 | Shin(MS)   | 0.166   | 0.129  | 0.566 | 0.207     | 0.768 | 0.967 | 0.994 |
 | Ours       | 0.149   | 0.109  | 0.517 | 0.192     | 0.813 | 0.969 | 0.994 |
 
-#### Outdoor Night-time
+#### Outdoor test set (Night-time)
 
 |   Models   | Abs Rel | Sq Rel | RMSE  | RMSE(log) | Acc.1 | Acc.2 | Acc.3 |
 |------------|---------|--------|-------|-----------|-------|-------|-------|
@@ -88,42 +93,40 @@ conda env create --file environment.yml
 
 ### Datasets
 
-See "scripts/run_prepare_vivid_data.sh".
-
 For ViViD Raw dataset, download the dataset provided on the [official website](https://sites.google.com/view/dgbicra2019-vivid/).
 
 For our post-processed dataset, please refer to [this Github page](https://github.com/UkcheolShin/ThermalSfMLearner-MS).
 
 After download our post-processed dataset, unzip the files to form the below structure.
 
-#### Expected dataset structure for processed ViViD dataset:
+#### Expected dataset structure for the post-processed ViViD dataset:
 ```
 KAIST_VIVID/
   calibration/
-  	cali_ther_to_rgb.yaml, ...
+    cali_ther_to_rgb.yaml, ...
   indoor_aggressive_local/
-  	RGB/
+    RGB/
       data/
         000001.png, 000002.png, ...
       timestamps.txt
-  	Thermal/
+    Thermal/
       data/
       timestamps.txt
-  	Lidar/
+    Lidar/
       data/
       timestamps.txt
-  	Warped_Depth/
+    Warped_Depth/
       data/
       timestamps.txt
     avg_velocity_thermal.txt
     poses_thermal.txt
     ...
   indoor_aggressive_global/
-  	...	
+    ...	
   outdoor_robust_day1/
-  	...
+    ...
   outdoor_robust_night1/
-  	...
+    ...
 ```
 
 Upon the above dataset structure, you can generate training/testing dataset by running the script.
