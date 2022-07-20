@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 
 # User define
-*/checkpoints/*
-*/results/*
+checkpoints
+results
 
 
 # C extensions
