@@ -96,8 +96,8 @@ def extract_well_lit_images(args):
     img_list = np.genfromtxt('./common/data_prepare/well_lit_from_varying.txt').astype(int) # 
 
     for frame_nb in img_list :
-        dump_img_T_file     = dump_dir_rgb/'{:06d}.png'.format(frame_nb)
-        dump_img_RGB_file   = dump_dir_ther/'{:06d}.png'.format(frame_nb)        
+        dump_img_T_file     = dump_dir_ther/'{:06d}.png'.format(frame_nb)
+        dump_img_RGB_file   = dump_dir_rgb/'{:06d}.png'.format(frame_nb)        
         dump_depth_T_file   = dump_dir_depth_T/'{:06d}.npy'.format(frame_nb)
         dump_depth_RGB_file = dump_dir_depth_RGB/'{:06d}.npy'.format(frame_nb)
 
